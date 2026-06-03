@@ -1,10 +1,6 @@
 # StateGuard
-An automated, decentralized State Keeper Network and automated tooling built on the Soroban smart contract platform. It monitors active contract state, dynamically calculates Time-To-Live (TTL) storag[...] 
-
-# StateGuard
 
 > Automated, decentralized State Keeper Network and tooling for the Soroban smart contract platform.
-
 StateGuard monitors active contract state, dynamically calculates Time-To-Live (TTL) storage metrics, and triggers programmatic extensions or restorations of archived ledger entries to prevent perm[...]
 
 ---
@@ -113,8 +109,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-(If you'd like a different license, tell me which one and I can update the repository and add a LICENSE file.)
 
 ---
 
