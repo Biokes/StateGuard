@@ -1,17 +1,17 @@
 # StateGuard
-An automated, decentralized State Keeper Network and automated tooling built on the Soroban smart contract platform. It monitors active contract state, dynamically calculates Time-To-Live (TTL) storage metrics, and triggers programmatic extensions or restorations of archived ledger entries to prevent permanent data deletion.
+An automated, decentralized State Keeper Network and automated tooling built on the Soroban smart contract platform. It monitors active contract state, dynamically calculates Time-To-Live (TTL) storag[...] 
 
 # StateGuard
 
 > Automated, decentralized State Keeper Network and tooling for the Soroban smart contract platform.
 
-StateGuard monitors active contract state, dynamically calculates Time-To-Live (TTL) storage metrics, and triggers programmatic extensions or restorations of archived ledger entries to prevent permanent data deletion.
+StateGuard monitors active contract state, dynamically calculates Time-To-Live (TTL) storage metrics, and triggers programmatic extensions or restorations of archived ledger entries to prevent perm[...]
 
 ---
 
 ## Why This Project Exists
 
-Unlike legacy EVM environments where data lives on-chain indefinitely, Soroban implements a strict **State Expiration and Rent model** to prevent state bloat. This paradigm introduces critical developer challenges:
+Unlike legacy EVM environments where data lives on-chain indefinitely, Soroban implements a strict **State Expiration and Rent model** to prevent state bloat. This paradigm introduces critical dev[...]
 
 - **Temporary storage entries** expire and are permanently deleted after their TTL expires, with no possible recovery pathway.
 - **Expired persistent and instance storage entries** are archived, causing critical dApp features (such as user balance tracking) to "brick" until explicitly restored.
@@ -88,4 +88,137 @@ StateGuard treats all transaction execution pathways as highly sensitive. Key se
 
 ## License
 
-<!-- Add license here -->
+This project is licensed under the MIT License — see the LICENSE file for details.
+
+```
+MIT License
+
+Copyright (c) 2026 Biokes
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+(If you'd like a different license, tell me which one and I can update the repository and add a LICENSE file.)
+
+---
+
+## Contributing
+
+Thanks for your interest in contributing to StateGuard! We welcome contributions of all kinds: bug reports, documentation improvements, tests, and code changes. To contribute, follow these steps:
+
+1. Fork the repository
+   - Click the "Fork" button at the top-right of the repository page to create your own copy under your GitHub account.
+
+2. Clone your fork locally
+
+```bash
+git clone https://github.com/<your-username>/StateGuard.git
+cd StateGuard
+```
+
+3. Verify installation and toolchain
+
+- Ensure you have the prerequisites installed (see "Verify Toolchain" above).
+- Run the verification commands:
+
+```bash
+cargo --version
+stellar --version
+```
+
+4. Keep your fork up-to-date with main
+
+Add the upstream remote (only once):
+
+```bash
+git remote add upstream https://github.com/Biokes/StateGuard.git
+```
+
+Before starting work, fetch and rebase (or merge) the latest main branch:
+
+```bash
+git fetch upstream
+git checkout main
+git pull upstream main
+# Option A: rebase
+git checkout -b my-feature-branch
+git rebase main
+# Option B: merge
+# git checkout -b my-feature-branch
+# git merge main
+```
+
+Push your feature branch to your fork:
+
+```bash
+git push origin my-feature-branch
+```
+
+5. Make changes & run tests
+
+- Implement your changes on your feature branch.
+- Run the relevant build and tests:
+
+```bash
+# Build contracts
+cd contracts/stateguard-core
+cargo build --target wasm32-unknown-unknown --release
+# Run unit/integration tests
+cargo test
+```
+
+6. Create a Pull Request
+
+- Go to your fork on GitHub and click "Compare & pull request" for your branch.
+- Target branch: `main` of `Biokes/StateGuard`.
+- Fill the PR template (title, description, what you changed, why, how to test).
+- Link any related issues.
+
+7. Syncing your fork after the PR
+
+If the upstream main branch has advanced and you need to update your branch:
+
+```bash
+git fetch upstream
+git checkout main
+git pull upstream main
+git checkout my-feature-branch
+git rebase main
+# or: git merge main
+git push --force-with-lease origin my-feature-branch
+```
+
+8. After review
+
+- Address reviewer comments in the same branch and push updates.
+- When CI passes and maintainers approve, a maintainer will merge your PR.
+
+Contribution guidelines & checklist
+
+- Fork and work on feature branches (do not commit directly to `main`).
+- Include tests where applicable and ensure all tests pass.
+- Follow code formatting and linting rules used in the repo.
+- Keep changes scoped to a single concern per PR when possible.
+
+Questions or help
+
+If you need help, open an issue describing the problem or join discussions in the repository.
+
+---
+
