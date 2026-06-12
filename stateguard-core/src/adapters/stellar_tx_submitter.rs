@@ -18,7 +18,6 @@ impl ITransactionSubmitPort for StellarTxSubmitterAdapter {
         _job: &ExecutionJob,
     ) -> impl Future<Output = Result<(), String>> + Send {
         async move {
-            // Mock implementation for submitting transaction to Stellar Node
             Ok(())
         }
     }

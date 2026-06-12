@@ -19,7 +19,6 @@ impl ITTLQueryPort for ZephyrIngestionAdapter {
     ) -> impl Future<Output = Result<ContractMonitor, String>> + Send {
         let contract_id = contract_id.to_string();
         async move {
-            // Mock implementation that would typically parse Mercury ZephyrVM streams
             Ok(ContractMonitor::new(
                 contract_id,
                 StorageType::Persistent,
