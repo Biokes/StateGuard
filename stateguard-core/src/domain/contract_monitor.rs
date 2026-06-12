@@ -34,7 +34,7 @@ impl ContractMonitor {
     pub fn requires_extension(&self, current_ledger: u32) -> bool {
         match self.remaining_life(current_ledger) {
             Some(rem) => rem <= self.target_threshold,
-            None => true,
+            None => true, // Already expired
         }
     }
 }
