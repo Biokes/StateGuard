@@ -19,12 +19,13 @@ impl ITTLQueryPort for ZephyrIngestionAdapter {
     ) -> impl Future<Output = Result<ContractMonitor, String>> + Send {
         let contract_id = contract_id.to_string();
         async move {
-            Ok(ContractMonitor::new(
+            ContractMonitor::new(
                 contract_id,
                 StorageType::Persistent,
                 1000,
                 5000,
-            ))
+            )
+            .map_err(|e| e.to_string())
         }
     }
 
